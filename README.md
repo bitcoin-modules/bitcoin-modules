@@ -29,12 +29,12 @@ cd ..
 
 4. Clone a copy of this repo into a new `modules` directory under the `src` directory 
 ```sh
-git clone https://github.com/bitcoin-modules/bitcoin-modules.git -recursive
+git clone https://github.com/bitcoin-modules/bitcoin-modules.git --recursive
 ```
 
 5. Create a symbolic link in the Bitcoin Core `src` directory
 ```sh
-ln -s bitcoin-modules bitcoin/src/modules
+ln -s `pwd`/bitcoin-modules ./bitcoin/src/modules
 ```
 
 6. Apply the base modules addon, that will be the base for other modules.
