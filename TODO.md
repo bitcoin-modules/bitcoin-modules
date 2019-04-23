@@ -1,3 +1,7 @@
+General ToDo
+============
+1. Convert addtocode scripts to python
+
 Modules ToDo
 ============
 1. Subsidy
