@@ -1,0 +1,4 @@
+if USE_DIFFICULTY_ZAWY
+  libbitcoin_server_a_SOURCES += addons/difficulty/zawy/zawy.cpp
+endif
+

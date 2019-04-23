@@ -1,0 +1,13 @@
+# Enable or Disable Using Difficulty/Zawy
+AC_ARG_WITH([wdifficultyzawy],
+    [AS_HELP_STRING([--with-difficulty-zawy],
+                    [Use Custom Difficilty Adjustment (Zawy) (default is yes)])],
+    [use_difficulty_zawy=$enableval],
+    [use_difficulty_zawy=yes])
+
+# Check the parameter and set the directive
+AC_MSG_CHECKING([whether to use difficulty zawy])
+AM_CONDITIONAL([USE_DIFFICULTY_ZAWY], [test x$use_difficulty_zawy = xyes])
+AC_DEFINE_UNQUOTED([USE_DIFFICULTY_ZAWY],[1],[Define to 1 to enable the difficulty/zawy addon])
+AC_MSG_RESULT($use_difficulty_zawy)
+

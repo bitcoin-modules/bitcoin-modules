@@ -1,0 +1,7 @@
+#ifdef USE_DIFFICULTY_ZAWY
+unsigned int GetNextWorkRequired(const CBlockIndex* pindexLast, const CBlockHeader *pblock, const Consensus::Params& params)
+{
+    assert(pindexLast != nullptr);
+    return LwmaGetNextWorkRequired(pindexLast, pblock, params);
+}
+#else
