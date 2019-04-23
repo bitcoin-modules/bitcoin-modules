@@ -40,13 +40,19 @@ ln -s `pwd`/bitcoin-modules ./bitcoin/src/modules
 6. Apply the base modules addon, that will be the base for other modules.
 ```sh
 cd bitcoin/src/modules/modules-base/implementation
-./addtocode.sh
+./addtocode.sh <path to bitcoin code>
 ```
 
 7. Follow the individual module instructions to integrate them
 
 8. Apply branding
 
+9. Build source as usual: 
+```sh
+./autogen.sh
+./configure
+make
+```
 
 Directory Structure
 -------------------
