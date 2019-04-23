@@ -1,3 +1,3 @@
 #ifdef USE_DIFFICULTY_ZAWY
-#include <addons/difficulty/zawy/zawy.h>
+#include <modules/difficulty/zawy/zawy.h>
 #endif
