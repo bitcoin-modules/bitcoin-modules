@@ -38,7 +38,7 @@ ln -s bitcoin-modules bitcoin/src/modules
 
 6. Apply the base modules addon, that will be the base for other modules.
 ```sh
-cd bitcoin/src/modules
+cd bitcoin/src/modules/modules-base
 ./addtocode.sh
 ```
 
