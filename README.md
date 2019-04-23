@@ -23,22 +23,24 @@ cd Source
 git clone https://github.com/bitcoin/bitcoin.git
 cd bitcoin
 git checkout tags/v0.17.1
-git checkout -b "BitcoinModularStaging"
+git checkout -b "BitcoinModuleStaging"
+cd ..
 ```
 
-4. Clone a copy of this repo into a new `addons` directory under the `src` directory 
+4. Clone a copy of this repo into a new `modules` directory under the `src` directory 
 ```sh
-git clone XYZ -recursive
+git clone https://github.com/bitcoin-modules/bitcoin-modules.git -recursive
 ```
 
 5. Create a symbolic link in the Bitcoin Core `src` directory
 ```sh
-ln -s XYZ bitcoin/src/addons
+ln -s bitcoin-modules bitcoin/src/modules
 ```
 
 6. Apply the base modules addon, that will be the base for other modules.
-```
-Add instructions here...
+```sh
+cd bitcoin/src/modules/modules-base/implementation
+./addtocode.sh
 ```
 
 7. Follow the individual module instructions to integrate them
@@ -48,24 +50,24 @@ Add instructions here...
 
 Directory Structure
 -------------------
-By default, a directory called `addons` is created underneath the `src` directory. Inside that directory are directories for features and in those are the base support files and artifacts for the addons and potentially different implementations.
+By default, a directory called `modules` is created underneath the `src` directory. Inside that directory are directories for features and in those are the base support files and artifacts for the modules and potentially different implementations.
 
 Addon Structure
 ---------------
 Each addon has to define exactly how they are to be merged into the base code to firstly provide support for a feature, then to provide an implementation. Addon packages must also be hyper focused and atomic as far as possible and define pre-requisites in a sensible way, which may include required parameters for the prerequisites.
 
-To aid in making the addons atomic, all the addon specific constants and variables are in the addon's .h header file, so that they do not need to be added to the core code... specifically, keeping the chain params from getting cluttered as far as possible.
+To aid in making the modules atomic, all the addon specific constants and variables are in the addon's .h header file, so that they do not need to be added to the core code... specifically, keeping the chain params from getting cluttered as far as possible.
 
 Addon Packaging and Implementation Notes
 ----------------------------------------
 1. Always give credit where it is due - maintain existing copyright headers and add your own if you make significant changes.
 2. Constant values have verbose names to avoid collisions and to clarify where they are specified and used.
-3. Addons should not assume the availability of const values from other modules. If there are correlating values, create a value for each and use comments to define which values in which modules need to be synchronised. 
+3. Modules should not assume the availability of const values from other modules. If there are correlating values, create a value for each and use comments to define which values in which modules need to be synchronised. 
 
 Basic Addon Guidelines
 ----------------------
 ### Always strive for high quality
-Addons should provide the highest possible code quality and of course be as complete as possible. Add unit tests, regression tests, transaltions, solid help messages, documentation, release notes, high quality artwork etc. wherever possible. Always keep in mind: If an addon is going to be distinguishable from Bitcoin Core, let it be because of exceptional quality. 
+Modules should provide the highest possible code quality and of course be as complete as possible. Add unit tests, regression tests, transaltions, solid help messages, documentation, release notes, high quality artwork etc. wherever possible. Always keep in mind: If an addon is going to be distinguishable from Bitcoin Core, let it be because of exceptional quality. 
 
 ### Always strive for minimal intrusion
 Where possible, avoid adding functional addon/module code directly into the base Bitcoin Core code. If it is absolutely required that functional code be added to the base code, please respect the existing code: add new code to the end of the applicable existing code sections and clearly comment the additions. Please keep in mind that **if an addon is disabled, it must not break existing code!**
@@ -89,40 +91,7 @@ Central Repository
 ------------------
 There will need to be a central repo of available packages.
 
-Available Addons
+Available Modules
 ----------------
-* Difficulty
-  * Zawy
-
-Addons ToDo
------------
-1. Subsidy
-  * Random 
-  * Big Block
-2. Algorithm Support
-  * Equihash
-3. Storage
-  * Tx Index
-  * Address Index
-4. Masternodes
-  * Masternode Base
-  * Maturity Based
-5. Governance
-6. Atomic Swaps
-7. 
-
-Addons Wishlist
----------------
-1. Extensive Algorithm Support
-  * Neoscrypt
-  * Scrypt
-  * X11
-  * etc.
-2. Snowflake, Snowball, Avalanche
-  * Snow Patrol = Avalance + Masternodes
-3. Quantum Proof Addresses
-4. Smart Contracts
-5. Assets
-6. 3D Blockchain?
-7. Masternodes
-  * Premium Features
+* [Difficulty Adjustment](difficulty)
+  * [Zawy](difficulty/zawy)
