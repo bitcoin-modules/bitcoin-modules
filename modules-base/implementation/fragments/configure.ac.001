@@ -1,0 +1,15 @@
+# Enable or Disable Using Bitcoin Modules
+AC_ARG_WITH([wbitcoinmodules],
+    [AS_HELP_STRING([--with-bitcoin-modules],
+                    [Support Custom Bitcoin Modules (default is yes)])],
+    [use_bitcoin_modules=$enableval],
+    [use_bitcoin_modules=yes])
+
+# Check the parameter and set the directive
+AC_MSG_CHECKING([whether to use bitcoin modules])
+AM_CONDITIONAL([USE_BITCOIN_MODULES_ADDON], [test x$use_bitcoin_modules = xyes])
+AC_DEFINE_UNQUOTED([USE_BITCOIN_MODULES_ADDON],[1],[Define to 1 to enable bitcoin modules])
+AC_MSG_RESULT($use_bitcoin_modules)
+
+# Bitcoin_Modules_Included_Start
+# Bitcoin_Modules_Included_End

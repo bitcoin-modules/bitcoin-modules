@@ -1,0 +1,3 @@
+if USE_BITCOIN_MODULES_ADDON
+  # Bitcoin_Modules_Core_Headers
+endif
