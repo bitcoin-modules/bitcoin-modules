@@ -92,8 +92,8 @@ There will need to be a central repo of available packages.
 
 Available Modules
 ----------------
-* Difficulty
-  * Zawy
+* [Difficulty Adjustment](difficulty)
+  * [Zawy](difficulty/zawy)
 
 Modules ToDo
 -----------
