@@ -13,7 +13,7 @@ Modules ToDo
   * Maturity Based
 5. Governance
 6. Atomic Swaps
-7. 
+7. Advanced Services Flags
 
 Modules Wishlist
 ================

@@ -84,8 +84,8 @@ A module more often than not comprises of several distict functions (features) t
 ### Differentiate between support and implementation
 Modules usually require different levels of integration, which can broadly be defined as adding support for a feature and then imlementing that feature. Put differently, you usually need to add support for a feature (the ability to do something) before you can add the implementation (how you wish to do something). Keeping these two concepts separate once again helps with making things more re-usable and extensible, as it may be desirable to have multiple implementation options for a single supported feature.
 
-### Maintain the capabilities structure(s) (T.B.D.)
-Different clients may have different capabilities enabled, which could cause chaos if clients merely assume that functionality is available at all it's peers. To alleviate this, please be sure to add a capability [here](https://to.be.done) which will announce a node's capabilities when it connects to other nodes. This will be a much more fine grained approach than relying on protocol versions.
+### Maintain the services / capabilities structure(s)
+Different clients may have different capabilities enabled and be able to offer different services, which could cause chaos if clients merely assume that all functionality is available at all it's peers. To alleviate this, please be sure to add a service flag to [protocol.h](https://github.com/bitcoin/bitcoin/blob/master/src/protocol.h) which will announce a node's capabilities when it connects to other nodes. This will be a much more fine grained approach than relying on protocol versions. Bitcoin Core only has a very limited number of service flags available by default, so an **"advanced service flags module"** is planned that will allow greater control.
 
 Central Repository
 ------------------
