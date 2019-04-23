@@ -24,6 +24,7 @@ git clone https://github.com/bitcoin/bitcoin.git
 cd bitcoin
 git checkout tags/v0.17.1
 git checkout -b "BitcoinModuleStaging"
+cd ..
 ```
 
 4. Clone a copy of this repo into a new `modules` directory under the `src` directory 
