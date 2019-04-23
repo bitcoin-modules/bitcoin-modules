@@ -20,6 +20,7 @@ Adding To Code (Script) - Preferred Method
 ==========================================
 Simply run the [addtocode.sh](implementation/addtocode.sh) script **once**:
 ```
+cd implementation
 ./addtocode.sh
 ```
 
