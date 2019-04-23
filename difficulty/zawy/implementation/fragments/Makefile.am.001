@@ -1,4 +1,4 @@
 if USE_DIFFICULTY_ZAWY
-  BITCOIN_CORE_H += addons/difficulty/zawy/zawy.h
+  BITCOIN_CORE_H += modules/difficulty/zawy/zawy.h
 endif
 
