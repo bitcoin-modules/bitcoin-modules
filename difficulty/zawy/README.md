@@ -48,12 +48,12 @@ AC_MSG_RESULT($use_difficulty_zawy)
 ```
 *before* the line:
 ```
-AC_LANG_PUSH([C++])
+# Bitcoin_Modules_Included_End
 ```
 
-Then, *after* the line:
+Then, *before* the line:
 ```
-echo "Options used to compile and link:"
+# Bitcoin_Modules_Report_List_End
 ```
 add the following:
 ```
@@ -71,7 +71,7 @@ endif
 ```
 *before* line:
 ```
-obj/build.h: FORCE
+# Bitcoin_Modules_Core_Headers
 ```
 also add the conditional source file:
 ```
@@ -81,7 +81,7 @@ endif
 ```
 *before* line:
 ```
-# wallet: shared between bitcoind and bitcoin-qt, but only linked
+# Bitcoin_Modules_Server_Sources
 ```
 src/pow.cpp
 -----------
